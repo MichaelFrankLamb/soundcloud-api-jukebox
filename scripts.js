@@ -1,6 +1,6 @@
 
 SC.initialize({
-    client_id: 'f665fc458615b821cdf1a26b6d1657f6'
+    client_id: //Your client ID will go here
 });
 
 var song = player;
@@ -97,4 +97,4 @@ stop.addEventListener("click",function(e) {
 
 var myJukebox = new Jukebox()
 
-window.onload = myJukebox.loadSong;
+
