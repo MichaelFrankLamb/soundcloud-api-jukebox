@@ -1,3 +1,4 @@
+
 SC.initialize({
     client_id: 'f665fc458615b821cdf1a26b6d1657f6'
 });
@@ -42,91 +43,58 @@ function playNext() {
     });
 }
 
+
 // Functionality from original jukebox page
 
 
-var songTitle = document.getElementById('songTitle');
-var songSlider = document.getElementById('songSlider');
-var currentTime = document.getElementById('currentTime');
-var duration = document.getElementById('duration');
-var volumeSlider = document.getElementById('volumeSlider');
-var nextSongTitle = document.getElementById('nextSongTitle');
-
-//var currentSong = 0;
-
-window.onload = loadSong;
-
-function loadSong() {
-    song.src = "songs/" + songs[currentSong];
-    songTitle.textContent = (currentSong + 1) + ". " + songs[currentSong]; 
-    nextSongTitle.innerHTML = "<b>Next Song: </b>" + songs[currentSong + 1 % songs.length];
-    song.playbackRate = 1; //
-    song.volume = volumeSlider.value;
-    song.play();
-    setTimeout(showDuration, 1000); //
-}
-
-setInterval(updateSongSlider, 1000);
-
-function updateSongSlider() {
-    var c = Math.round(song.currentTime); 
-    songSlider.value = c;
-    currentTime.textContent = convertTime(c); 
-    if(song.ended){ 
-        next(); 
-    } 
-}
-
-function convertTime (secs) {
-    var min = Math.floor(secs/60);
-    var sec = secs % 60;
-    min = (min < 10) ? "0" + min : min;
-    sec = (sec < 10) ? "0" + sec : sec;
-    return (min + ":" + sec);
-}
-
-function showDuration() {
-    var d = Math.floor(song.duration);
-    songsSlider.setAttribute("max", d);
-    duration.textContent = convertTime(d); 
-}
-
-function playOrPauseSong (img) {
-    song.playbackRate = 1;
-    if(song.paused) {
-        song.play();
-        img.src = "images/pause.png";
-    }else{
-        song.pause();
-        img.src = "images/play.png";
-    }
-}
+// var music = this;
+// music.audio = document.createElement('audio');
+// music.songTitle = document.getElementById('songTitle');
+// music.nextSongTitle = document.getElementById('nextSongTitle');
+// var next = document.getElementById('next');
+// var prev = document.getElementById('prev');
+// var playPause = document.getElementById('playPause');
+// var stop = document.getElementById('stop'); 
 
 
-function next() {
-    currentSong = currentSong + 1 % songs.length;
-    loadSong();
-}
 
-function previous() {
-    currentSong--;
-    currentSong = (currentSong < 0) ? songs.length - 1 : currentSong;
-    loadSong();
-}
+// music.loadSong = loadSong;
+//     function loadSong(){
+//     music.audio.src = "songs/" + music.songs[music.currentSong];
+//     music.songTitle.textContent = (music.currentSong + 1) + ". " + music.songs[music.currentSong]; 
+//     music.nextSongTitle.innerHTML = "<b>Next Song: </b>" + music.songs[(music.currentSong + 1) % +(music.songs.length)];
+//     music.audio.play();
+//     }
 
-function seekSong() {
-    song.currentTime = songSlider.value;
-    currentTime.textContent = convertTime(song.currentTime); 
-}
+//     playPause.addEventListener("click",function playPause(e) {
+//         if(music.audio.paused) {
+//             music.audio.play();
+//             e.target.src = "images/pause.png";
+//         }else{
+//             music.audio.pause();
+//             e.target.src = "images/play.png";
+//         }
+//     } );
+// next.addEventListener("click",function(e) {
+//     ++music.currentSong;
+//     music.currentSong = (music.currentSong > 2) ? music.songs.length - 3 : music.currentSong;
+//     loadSong();
+// });
 
-function adjustVolume() {
-    song.volume = volumeSlider.value;
-}
+// prev.addEventListener("click",function(e) {
+//     music.currentSong--;
+//     music.currentSong = (music.currentSong < 0) ? music.songs.length - 1 : music.currentSong;
+//     loadSong();
+// });
 
-function increasePlaybackRate() {
-    song.playbackRate += 0.5;       
-}
+// stop.addEventListener("click",function(e) {  
+//     music.audio.pause();
+//     music.audio.load();
+//     music.audio.src = ""; 
+//     music.audio.src = "songs/" + music.songs[music.currentSong];                  
+// });                                           
+// }
 
-function decreasePlaybackRate() {
-    song.playbackRate -= 0.5;       
-}
+// var myJukebox = new Jukebox()
+
+// window.onload = myJukebox.loadSong;
