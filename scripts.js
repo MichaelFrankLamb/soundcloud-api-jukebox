@@ -1,6 +1,6 @@
 
 SC.initialize({
-    client_id: //Your client ID will go here
+    client_id: 'f665fc458615b821cdf1a26b6d1657f6'
 });
 
 
@@ -10,6 +10,7 @@ function Jukebox () {
         x.getSearch = getSearch;
         x.getSongById = getSongById;
         x.pauseSong = pauseSong;
+        x.playSong = playSong;
 
         var playButton = document.getElementById("play");
         var pauseButton = document.getElementById("pause");
@@ -19,7 +20,7 @@ function Jukebox () {
 
         searchButton.addEventListener("click", getSearch);
 
-        playButton.addEventListener("click", getSongById);
+        playButton.addEventListener("click", playSong);
 
         pauseButton.addEventListener("click", pauseSong);
     
@@ -30,8 +31,7 @@ function Jukebox () {
             console.log(response)
             results = response;
             // results.concat(response);
-            response.forEach(function(obj) {     
-                console.log("anything");           
+            response.forEach(function(obj) {               
                 let box = document.createElement('div');
                 box.addEventListener("click", ()=>{
                     x.getSongById(obj.id)
@@ -52,6 +52,10 @@ function Jukebox () {
 
     function pauseSong() {
         player.pause();
+    }
+
+    function playSong() {
+        player.play();
     }
 }
 
