@@ -7,6 +7,7 @@
     <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
     <!-- <script src="jquery-3.3.1.min.js"></script> -->
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.core.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
     <title>Soundcloud Jukebox</title>
 </head>
@@ -17,20 +18,20 @@
         </div>
         <div id="player" class="subgrid">
             <div id="songTitle" class="song-title">Song title will go here</div>
-            <div class="subgrid">
-            </div>
+            <!-- <div class="subgrid">
+            </div> -->
             <div id="controllers" class="subgrid3">
                 <img id="play" src="images/play.png" width="30px">
                 <img id="pause" src="images/pause.png" width="30px">
             </div>
-            <div id="nextSongTitle" class="song-title"><b>Next Song: </b>Next song title goes here...  
+            <div id="artistName" class="artist-name"><b>Artist: </b>Artist name goes here...  
             </div>
             <input id="search" name="search-query" type="text">
             <button id="submit">Search</button>
         </div>
     
-        <p id="songLink"><a id="s-link" target="_blank" href="#">Check out this song on Soundcloud</a></p>
-        <p id="artistLink"><a id="a-link" target="_blank" href="#">View this artist's Soundcloud Profile</a></p>
+        <p id="songLink"><a id="s-link" target="_blank" href="#">View the current song on Soundcloud</a></p>
+        <p id="artistLink"><a id="a-link" target="_blank" href="#">View the current artist's Soundcloud Profile</a></p>
         <p id="genre"></p>
         <div id="description"></div>
         <p id="releaseDate"></p>
