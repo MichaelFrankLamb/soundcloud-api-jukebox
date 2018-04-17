@@ -115,10 +115,16 @@ img{
 }
 
 #description {
+    display: block;
     grid-column: 3/4;
     grid-row: 2/3;
     margin-top: 0.5em;
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; */
+
 }
+
 
 #releaseDate {
     grid-row: 2/3;
@@ -135,3 +141,10 @@ img{
     padding-bottom: 3em;
     padding-top: 0.5em;
 }
+
+
+
+
+
+
+    /*  */
