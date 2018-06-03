@@ -1,5 +1,9 @@
 SC.initialize({
+<<<<<<< HEAD
   client_id: "f665fc458615b821cdf1a26b6d1657f6"
+=======
+  client_id: // YOUR CLIENT ID HERE
+>>>>>>> a835fb5a84a878c3b8b8d357801a8a0f921c295e
 });
 
 function Jukebox() {
