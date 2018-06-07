@@ -107,10 +107,12 @@ function Jukebox() {
 
   function setSongLink(permalink_url) {
     x.songLink.setAttribute("href", permalink_url);
+    x.songLink.setAttribute("style", "display:visible")
   }
 
   function setArtistLink(permalink_url) {
     x.artistLink.setAttribute("href", permalink_url);
+    x.artistLink.setAttribute("style", "display:visible")
   }
 
   function displayArtwork(artwork_url) {
@@ -127,7 +129,8 @@ function Jukebox() {
   }
 
   function displayDescription(description) {
-    if (description.length < 300) {
+    console.log(description)
+    if ((description.length < 300) && (description != "")) {
       x.descript.innerHTML = "<b>Track Description: </b>" + description;
     } else {
       x.descript.innerHTML = "<b>Track Description: </b> N/A";
