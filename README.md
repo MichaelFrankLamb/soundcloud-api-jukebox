@@ -1,0 +1,3 @@
+# SearchCloud
+
+A custom Jukebox built on Soundcloud's RESTful API.  Users can enter a keyword and search, building a playlist of titles from the search results.  Upon clicking on a song title, the track will play and relevant artist/track data will be displayed in the UI.  This project is currently a static page, but I'll be re-factoring it as a MERN stack application to enable users to save playlists soon!
